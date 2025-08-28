@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMTech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/smt/images/icon1.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/solucoes.css">
+    <link rel="stylesheet" href="css/quemsomos.css">
+    <link rel="stylesheet" href="css/valores.css">
+    <link rel="stylesheet" href="css/contato.css">
+
+
+</head>
+<body>
+    <div id="app">
+        <!-- Carrega a home -->
+        <div id="home-container"></div>
+        
+        <!-- Carrega as soluções -->
+        <div id="solucoes-container"></div>
+        <!-- Carrega quem somos -->
+        <div id="quemsomos-container"></div>
+        <!-- Dentro da div#app, após o quemsomos-container -->
+        <div id="valores-container"></div>
+        <div id="contato-container"></div>
+
+        
+    </div>
+    <script src="js/script.js"></script>
+
+    <script>
+        // Carrega home.html
+        fetch('sections/home.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('home-container').innerHTML = data;
+                
+                // Carrega solucoes.html DEPOIS que a home carregar
+                fetch('sections/solucoes.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('solucoes-container').innerHTML = data;
+                        
+                                        
+                                        // Carrega quemsomos.html
+                                        fetch('sections/quemsomos.html')
+                                            .then(response => response.text())
+                                            .then(data => {
+                                                document.getElementById('quemsomos-container').innerHTML = data;
+                                                initScripts(); // Inicializa os scripts
+                                            });
+                                    });
+                            });
+           
+        
+
+        function initScripts() {
+            // Script do slider (mesmo que você já tem)
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                });
+            });
+            
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

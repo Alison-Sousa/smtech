@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMTech</title>
+  <link rel="stylesheet" href="/smt/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+<section id="home" class="home-section">
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="nav-container">
+                    <div class="logo">
+                       <img src="/smt/images/icon2.png" alt="Logo SMTech" style="height: 65px; vertical-align: middle; margin-right: -15px; margin-top: -5px;">
+                      SMTech</div>
+                    <ul class="nav-links">
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#solucoes">Nossas Soluções</a></li>
+                        <li><a href="#quem-somos">Quem Somos</a></li>
+                        <li><a href="#contato" class="menu-button">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="hero-content centered">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <h1>Potencialize seus resultados com <span class="highlight">Business Intelligence</span></h1>
+                        <p class="subtitle">Organizamos seus dados de forma inovadora para que você tome decisões mais estratégicas e eficazes.</p>
+                        <a href="#contato" class="cta-button primary">Fale com Especialista</a>
+                    </div>
+                    
+                    <div class="slide">
+                         <h1>Visualize dados com nossas <span class="highlight">Plataformas Interativas</span></h1>
+                         <p class="subtitle">Criamos apps com dashboards interativos para você visualizar informações com facilidade.</p>
+                        <a href="#solucoes" class="cta-button secondary">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+ 
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentSlide = index;
+    }
+    
+    dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+        const slideIndex = parseInt(this.getAttribute('data-slide'));
+        showSlide(slideIndex);
+      });
+    });
+    
+    // Auto-rotate slides every 5 seconds
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+  });
+</script>
+

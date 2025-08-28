@@ -1,0 +1,273 @@
+/* Estilo Premium para Contato */
+.contato-section {
+    background: #031d49;
+    padding: 100px 20px 40px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contato-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contato-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.contato-header .subtitle {
+    font-size: 1.5rem;
+    color: #00a0e1;
+    margin-bottom: 0;
+}
+
+.contato-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Reduzi de 8px para 5px */
+    margin-bottom: 60px;
+    flex-wrap: nowrap;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px; /* Reduzi de 10px 25px para 10px 20px */
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    margin: 0 2px; /* Adiciona uma pequena margem entre os botões */
+}
+
+.cta-button i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.cta-button.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.cta-button.calendly {
+    background: white;
+    color: #031d49;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+}
+
+.left-align {
+    margin-right: auto;
+    text-align: right;
+    padding-right: 25px;
+}
+
+.logo-footer {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.footer-description {
+    text-align: right;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #00a0e1;
+}
+
+.footer-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.address {
+    white-space: nowrap;
+}
+
+.address-line {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.footer-section i {
+    margin-right: 10px;
+    color: #00a0e1;
+    width: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00a0e1;
+}
+
+.site-map {
+    list-style: none;
+    padding: 0;
+}
+
+.site-map li {
+    margin-bottom: 12px;
+}
+
+.site-map a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-map a:hover {
+    color: #00a0e1;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter-form button {
+    background: #00a0e1;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter-form button i {
+    font-size: 1.2rem;
+    vertical-align: middle;
+    color: white; /* Adicione esta linha */
+    opacity: 1; /* Garante que está 100% visível */
+}
+
+.newsletter-form button:hover {
+    background: #0088c0;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+.address {
+  position: relative;
+  padding-left: 33px; /* espaço para o ícone */
+  line-height: 1.5;
+}
+
+.address i {
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+
+  width: 20px; /* força um espaço mínimo */
+  text-align: center;
+}
+
+.address-text {
+  display: inline-block;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contato-header h2 {
+        font-size: 2rem;
+    }
+    
+    .contato-header .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .contato-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .left-align {
+        text-align: left;
+        padding-right: 0;
+    }
+    
+    .footer-description {
+        text-align: left;
+    }
+    
+    .social-icons {
+        justify-content: flex-start;
+    }
+    
+    .address {
+        white-space: normal;
+    }
+    
+    .address-line {
+        display: block;
+        margin-left: 25px;
+        margin-top: 5px;
+    }
+}
